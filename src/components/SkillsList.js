@@ -6,18 +6,17 @@ class SkillsList extends Component{
         this.state={
             isEdit : false
         }
-    
     }
  
     renderSkill = () =>{
         return(
         <li className="skillname">
             <span>{this.props.x.name}</span>
+            <button className="btn editbtn" onClick={() => {this.toggleState()}}>Manage</button>
             <button className="btn editbtn" onClick={() => {this.toggleState()}}>Edit</button>
             <button className="btn deletebtn" onClick={() => {this.props.del(this.props.index)}}>Delete</button>
          </li>
         )
-
     }
     
     //toggle 

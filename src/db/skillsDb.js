@@ -1,20 +1,32 @@
-const {ObjectID} = require('mongodb');
+const { ObjectID } = require('mongodb');
 
 
-module.exports = (makeDb) =>{
-	return Object.freeze({
 
-	})
-	    //create a new skill
-    async function createSkill(skill){
+module.exports = (makeDb) => {
+    return Object.freeze({
+        create, 
+        exists,
+        remove,
+        get,
+        changeName,
+        changePrice,
+        changeDescription,
+        changeGoals
+    })
+
+
+
+    //create a new skill
+    async function create(skill){
         const collection = await getConnection()
 
         const inserted = await collection.insertOne(skill)
 
         return !!inserted
     }
-        //find a skill
-    async function skillExists(exists){
+
+    //find a skill
+    async function exists(name){
         const collection = await getConnection()
 
         const found = await collection.findOne({name})
@@ -22,28 +34,68 @@ module.exports = (makeDb) =>{
         return !!found;
     }
 
-    async function getSkill(skillID){
+    async function get(skillId){
         
         const collection = await getConnection()
 
-        const found = await collection.find({skill: skill_id}).toArray()
+        const found = await collection.find({_id: ObjectID(skillId)});
 
         return found;
     }
-        //delete a skill
-    async function removeSkill(skill_id){
+
+
+
+    //update a skill name
+    async function changeName(skillId, name){
+
+        const collection = await getConnection();
+
+        const updated = await collection.updateOne({_id: ObjectID(skillId)}, {$set: {name: name}})
+
+        return !!updated
+    }
+     
+    
+    //update a skill description
+    async function changeDescription(skillId, description){
+
+        const collection = await getConnection();
+
+        const updated = await collection.updateOne({_id: ObjectID(skillId)}, {$set: {description: description}})
+
+        return !!updated
+    }
+
+    //update a skill goal
+    async function changeGoals(skillId, goals){
+
+        const collection = await getConnection();
+
+        const updated = await collection.updateOne({_id: ObjectID(skillId)}, {$set: {goals: goals}})
+
+        return !!updated
+
+    }
+
+    //delete a skill
+    async function remove(skill_id){
         const collection = await getConnection()
 
         const removed = await collection.deleteOne({_id: ObjectID(skill_id)})
 
         return !!removed;
     }
-        //db function receive
+    
+
+    //db function receive
 
     async function getConnection(){
         const db = await makeDb();
-        const collection = db.collection('skill');
+        const collection = db.collection('product')
 
-        return collection;
+        return collection
     }
+
 }
+
+
