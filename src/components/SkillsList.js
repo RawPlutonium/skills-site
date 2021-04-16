@@ -31,7 +31,8 @@ class SkillsList extends Component{
         })
     }
     goToManage = () => {
-        this.props.handleManage();
+        console.log("Name", this.props.x.name)
+        this.props.handleManage(this.props.x.name);
     }
     updateSkillItem = (e) =>{
         e.preventDefault();

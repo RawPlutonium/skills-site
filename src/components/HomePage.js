@@ -54,7 +54,7 @@ class HomePage extends Component {
   }
 
   handleManage = (name) => {
-    
+    console.log("Name 2",name)
     this.props.history.push({pathname: '/edit', state: {name: name}})
   }
 
