@@ -1,24 +1,20 @@
 import React, {Component} from 'react' 
-import './App.css';
+import './App.scss';
 import HomePage from './components/HomePage';
 import EditSkill from './components/EditSkill';
-
-import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
-
-import
+import {BrowserRouter,Switch , Route} from 'react-router-dom'
 class App extends Component {
  
   render(){
     return (
-      <HashRouter>
-        <div>
-          <HomePage/>
-        </div>
-      </HashRouter>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path='/' component={HomePage}/>
+            <Route exact path='/edit' component={EditSkill}/>
+          </Switch>
+        </BrowserRouter>
+      
+  
       
     );
   }

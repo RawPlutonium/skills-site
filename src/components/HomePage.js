@@ -8,7 +8,8 @@ class HomePage extends Component {
     skills:[
     
     ],
-    current: ''
+    current: '',
+    name: ''
   }
 
   //updateSkill (track the new typed skill)
@@ -52,10 +53,14 @@ class HomePage extends Component {
     })
   }
 
+  handleManage = (name) => {
+    
+    this.props.history.push({pathname: '/edit', state: {name: name}})
+  }
 
   render(){
     const skillsList = this.state.skills.map((skill, i) => {
-      return <SkillsList x={skill} key={i} index={i} del={this.deleteSkill} editt={this.editSkill}/>
+      return <SkillsList x={skill} key={i} index={i} del={this.deleteSkill} editt={this.editSkill} handleManage={this.handleManage} />
     })
     return (
       <div className="App">

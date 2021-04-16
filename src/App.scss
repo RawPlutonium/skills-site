@@ -92,3 +92,10 @@ html{
 .skillname{
  color: #54545d;
 }
+.anchor{
+  color: #FFFFFF;
+  text-decoration: none;
+  &:hover{
+    background-color: transparent;
+  }
+}

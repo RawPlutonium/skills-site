@@ -1,18 +1,22 @@
 import React, {Component, Fragment} from 'react';
+import { useHistory } from 'react-router';
 
 class SkillsList extends Component{
+    
     constructor(props){
         super(props);
+        console.log(props);
         this.state={
             isEdit : false
         }
     }
- 
+    
     renderSkill = () =>{
+        
         return(
         <li className="skillname">
             <span>{this.props.x.name}</span>
-            <button className="btn editbtn" onClick={() => {this.toggleState()}}>Manage</button>
+            <button className="btn editbtn" onClick={() => {this.goToManage()}}>Manage</button>
             <button className="btn editbtn" onClick={() => {this.toggleState()}}>Edit</button>
             <button className="btn deletebtn" onClick={() => {this.props.del(this.props.index)}}>Delete</button>
          </li>
@@ -25,6 +29,9 @@ class SkillsList extends Component{
         this.setState({
             isEdit: !isEdit
         })
+    }
+    goToManage = () => {
+        this.props.handleManage();
     }
     updateSkillItem = (e) =>{
         e.preventDefault();
