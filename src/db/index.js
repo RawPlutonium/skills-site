@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient;
+import {MongoClient} from 'mongodb';
 const makeSkillsDb = require('./skillsDb');
 const makeUserDb = require('./user');
 
