@@ -2,7 +2,7 @@ import React, {useState} from  'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import '../App.scss';
-import './homepage.css';
+import './homepage.scss';
 
 function EditSkill(props){
     let [checked, handleChecked] = useState(0);
@@ -37,9 +37,9 @@ function EditSkill(props){
                 <div className="column">
                         <h1>Describe your skill</h1>
                         <div class="control">
-                            <textarea class="textarea is-focused" placeholder="Skill Description"></textarea>
+                            <textarea class="textarea" placeholder="Skill Description"></textarea>
                         </div>
-                        <button class="button is-success" >Save</button>
+                        <button class="button is-success"   >Save</button>
                 </div>
 
                

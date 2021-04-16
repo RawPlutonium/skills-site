@@ -1,7 +1,7 @@
 import React, {Component} from 'react' 
 import Addskill from './Addskill'
 import SkillsList from './SkillsList'
-import './homepage.css';
+import './homepage.scss';
 
 class HomePage extends Component {
   state={
