@@ -9,7 +9,7 @@ class HomePage extends Component {
     
     ],
     current: '',
-    name: ''
+ 
   }
 
   //updateSkill (track the new typed skill)
@@ -62,9 +62,10 @@ class HomePage extends Component {
     const skillsList = this.state.skills.map((skill, i) => {
       return <SkillsList x={skill} key={i} index={i} del={this.deleteSkill} editt={this.editSkill} handleManage={this.handleManage} />
     })
+
     return (
       <div className="App">
-        <h2 className="heading"><span class="fas fa-bahai awsome"></span>Manage Your Skills</h2>
+        <h2 className="heading">Welcome Mnyambura! <br/>&nbsp;<span class="fas fa-bahai awsome"></span>Manage Your Skills&nbsp;<span class="fas fa-bahai awsome"></span></h2>
         <Addskill y={this.updateSkill} z={this.addNewSkill} cr={this.state.current}/>
         <div className="current">
       

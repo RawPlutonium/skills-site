@@ -9,7 +9,6 @@ module.exports = (makeDb) => {
         remove,
         get,
         changeName,
-        changePrice,
         changeDescription,
         changeGoals
     })

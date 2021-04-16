@@ -7,6 +7,9 @@ function Login(){
     const goToHome = () =>{
         history.push('/homepage')
     }
+    const goToRegister = () =>{
+        history.push('/register')
+    }
     return(<div>
 
 
@@ -16,8 +19,9 @@ function Login(){
       <div class="columns is-centered">
         <div class="column is-5-tablet is-4-desktop is-3-widescreen">
           <form action="" class="box">
+          <h1 className="title title-login">Login</h1>   
             <div class="field">
-              <label for="" class="label">Email</label>
+              <label for="" class="label">Username</label>
               <div class="control has-icons-left">
                 <input type="email" placeholder="e.g. bobsmith@gmail.com" class="input" required/>
                 <span class="icon is-small is-left">
@@ -43,6 +47,9 @@ function Login(){
             <div class="field">
               <button class="button is-success" onClick={goToHome}>
                 Login
+              </button>
+              <button class="button is-success" onClick={goToRegister}>
+                Register
               </button>
             </div>
           </form>
