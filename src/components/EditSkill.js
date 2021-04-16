@@ -15,7 +15,8 @@ function EditSkill(props){
         handleChecked(checked+1)
     }
 
-    let percentage = Math.round(((checked/6) * 100), 1);
+
+    let percentage = Math.round(((checked/5) * 100), 1);
     return(
         <div>
             <h2 className="heading"><span class="fas fa-bahai awsome"></span>Edit {props.history.location.state.name}</h2>
@@ -25,7 +26,7 @@ function EditSkill(props){
             <div className="container box columns">
                 <div className="column">
                     <ol className="list">
-                        <li><input type="text" className="input  is-success is-normal is-rounded" /> <input className="checkbox" type="checkbox" onChange={setChecker}/></li>
+                        <li><input type="text" className="input  is-success is-normal is-rounded" /> <input className="checkbox" type="checkbox" onChange={setChecker} /></li>
                         <li><input type="text" className="input  is-success is-normal is-rounded" /> <input className="checkbox" type="checkbox" onChange={setChecker}/></li>
                         <li><input type="text" className="input  is-success is-normal is-rounded" /> <input className="checkbox" type="checkbox" onChange={setChecker}/></li>
                         <li><input type="text" className="input  is-success is-normal is-rounded" /> <input className="checkbox" type="checkbox" onChange={setChecker}/></li>
@@ -38,7 +39,7 @@ function EditSkill(props){
                         <div class="control">
                             <textarea class="textarea is-focused" placeholder="Skill Description"></textarea>
                         </div>
-                        <button class="button is-success">Save</button>
+                        <button class="button is-success" >Save</button>
                 </div>
 
                
