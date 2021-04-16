@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useHistory } from 'react-router';
 import './index.scss';
-const {createUser} = require('../../db/dbService');
+import {createUser} from '../../db/dbService';
 
 function Register(){
     const history = useHistory();
