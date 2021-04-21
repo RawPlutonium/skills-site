@@ -17,4 +17,4 @@ async function makeDb(){
 const skills = makeSkillsDb(makeDb);
 const user = makeUserDb(makeDb);
 
-module.exports = Object.freeze({skills, user})
+export {skills, user}
